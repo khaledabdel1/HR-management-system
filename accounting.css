@@ -1,5 +1,5 @@
 header{
-    background-color: aqua;
+    background-color:blueviolet;
     height: 50px;
     width: 100%;
 }
@@ -9,19 +9,18 @@ main{
     
 }
 footer{
-    background-color: aqua;
+    background-color:blueviolet;
     height: 50px;
-    margin-top: 0px;
 }
 a{
     text-decoration : none;
     font-size: 20px ;
-    color:blue;
+    color:wheat;
 }
 li{
     list-style: none;
     font-size: 20px ;
-    color:blue;
+    color:wheat;
    
 }
 footer{
@@ -30,12 +29,11 @@ footer{
     height: 75px;
 }
 #a1 a{
-    margin-left: 600px;
-    
-    
+    margin-left: 600px;  
+    margin-top: 20px;  
 }
 p{
-    color: blue;
+    color: wheat;
     font-size: 20px;
 }
 ol{
