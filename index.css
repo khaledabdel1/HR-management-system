@@ -2,6 +2,8 @@ header{
     background-color: aqua;
     height: 50px;
     width: 100%;
+    display: flex;
+    flex-wrap:wrap;
 }
 main{
     height: 500px;

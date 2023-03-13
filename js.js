@@ -3,10 +3,10 @@ let sectionEl = document.getElementById("org")
 sectionEl.width = 20
 sectionEl.style.backgroundColor =  "#539165";
 console.log(sectionEl)
-const allEmployee = [];
+let allEmployee = [];
 console.log(allEmployee)
 
-function Employee(fullName,Department,Level,imageUrl,employeeId,){
+function Employee(fullName,Department,Level,imageUrl,employeeId){
     
     this.fullName = fullName;
     this.Department = Department;
@@ -96,5 +96,37 @@ function submitHolder (event){
     
     let newEmployee = new Employee(eFullName,eDepartment,eLevel,eImage)
     newEmployee.newrender()
+    saveData(allEmployee);
     
 }
+
+function renderAll(){
+    for (let i = 0;i< allEmployee.length; i++){
+        allEmployee[i].newrender();
+      
+      }
+  }
+
+  function saveData(data){
+    let stringArr= JSON.stringify(data);
+    localStorage.setItem('Employees', stringArr);
+  }
+  console.log("before saving in LS", allEmployee[-1])
+
+  function getData(){
+    let retrievedArr = localStorage.getItem('Employees');
+   
+    let objArray = JSON.parse(retrievedArr);
+    if(objArray != null){
+
+        allEmployee = [];
+
+        for (let i = 0; i < objArray.length; i++) {
+          new Employee(objArray[i].fullName, objArray[i].Department, objArray[i].Level, objArray[i].imageUrl)
+        }
+      }
+    
+      
+  }  
+  getData();
+  renderAll();
